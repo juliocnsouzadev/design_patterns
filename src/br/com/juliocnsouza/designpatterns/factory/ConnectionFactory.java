@@ -27,10 +27,28 @@ public class ConnectionFactory {
         return connectionFactory;
     }
 
-    public Connection getConnection() {
+    public enum Tipo {
+
+        MY_SQL( "mysql" ),
+        POSTGRES( "postgress" );
+
+        private final String nome;
+
+        private Tipo( String nome ) {
+            this.nome = nome;
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+    }
+
+    public Connection getConnection( Tipo tipo ) {
         try {
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost/banco" , "root" ,
-                                                          "abc123" );
+            Connection con = DriverManager.getConnection(
+                    "jdbc:" + tipo.getNome() + "://localhost/banco" , "root" ,
+                    "abc123" );
             return con;
         }
         catch ( SQLException ex ) {

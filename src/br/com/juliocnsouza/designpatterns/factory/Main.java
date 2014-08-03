@@ -14,7 +14,8 @@ public class Main {
     public static void main( String[] args ) {
         //Criando um DAO e passando uma conexao gerada pela factory
 
-        PessoaDAO dao = new PessoaDAO( ConnectionFactory.getInstance().getConnection() );
+        PessoaDAO dao = new PessoaDAO( ConnectionFactory.getInstance().getConnection(
+                ConnectionFactory.Tipo.MY_SQL ) );
     }
 
 }
