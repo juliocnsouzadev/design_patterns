@@ -23,7 +23,7 @@ public class Main {
                                            notas.pega( NotasMusicais.Tipo.FA ) );
 
         Piano piano = new Piano();
-        piano.tocar( musica );
+        //piano.tocar( musica );
 
         Thread.sleep( 1200l );
 
