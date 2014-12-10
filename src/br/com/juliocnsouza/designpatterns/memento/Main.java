@@ -14,12 +14,15 @@ public class Main {
 
         OrdemDeServico os = new OrdemDeServico( "Julio" );
         System.out.println( "OS status: " + os.getStatus() );
+
         historico.adiciona( os.salvaEstado() );
         os.avanca();
         System.out.println( "OS status: " + os.getStatus() );
+
         historico.adiciona( os.salvaEstado() );
         os.avanca();
         System.out.println( "OS status: " + os.getStatus() );
+
         Estado estado = historico.busca( 0 );
         os.restaurar( estado );
         System.out.println( "OS status: " + os.getStatus() );
