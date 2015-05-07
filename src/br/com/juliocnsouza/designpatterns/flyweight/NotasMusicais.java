@@ -15,6 +15,7 @@ public class NotasMusicais {
     public enum Tipo {
 
         DO,
+        DO_SUSTENIDO,
         RE,
         MI,
         FA,
@@ -33,6 +34,7 @@ public class NotasMusicais {
         notas.put( Tipo.SOL , new Sol() );
         notas.put( Tipo.LA , new La() );
         notas.put( Tipo.SI , new Si() );
+        notas.put( Tipo.DO_SUSTENIDO , new DoSustenido() );
     }
 
     public Nota pega( Tipo tipo ) {

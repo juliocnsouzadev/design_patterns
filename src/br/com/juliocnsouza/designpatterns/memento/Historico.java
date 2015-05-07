@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Historico {
 
-    private List<Estado> estados = new ArrayList<Estado>();
+    private final List<Estado> estados = new ArrayList<>();
 
     public Estado busca( int index ) {
         return estados.get( index );

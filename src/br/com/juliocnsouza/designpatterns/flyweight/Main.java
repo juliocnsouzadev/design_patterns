@@ -20,12 +20,14 @@ public class Main {
                                            notas.pega( NotasMusicais.Tipo.MI ) ,
                                            notas.pega( NotasMusicais.Tipo.FA ) ,
                                            notas.pega( NotasMusicais.Tipo.FA ) ,
-                                           notas.pega( NotasMusicais.Tipo.FA ) );
+                                           notas.pega( NotasMusicais.Tipo.FA ) ,
+                                           notas.pega( NotasMusicais.Tipo.DO_SUSTENIDO ) ,
+                                           notas.pega( NotasMusicais.Tipo.DO_SUSTENIDO ) );
 
         Piano piano = new Piano();
-        //piano.tocar( musica );
+        piano.tocar( musica );
 
-        Thread.sleep( 1200l );
+        Thread.sleep( 800l );
 
         List<Nota> musica2 = Arrays.asList( notas.pega( NotasMusicais.Tipo.DO ) ,
                                             notas.pega( NotasMusicais.Tipo.RE ) ,
