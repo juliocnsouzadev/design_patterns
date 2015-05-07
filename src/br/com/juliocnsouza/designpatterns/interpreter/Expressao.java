@@ -1,5 +1,7 @@
 package br.com.juliocnsouza.designpatterns.interpreter;
 
+import br.com.juliocnsouza.designpatterns.interpreter.visitor.Visitor;
+
 /**
  * Expressao.java -> Job:
  * <p>
@@ -10,7 +12,6 @@ package br.com.juliocnsouza.designpatterns.interpreter;
 public abstract class Expressao implements Expressible {
 
     protected Expressible esquerda;
-
     protected Expressible direita;
 
     public Expressao( Expressible esquerda , Expressible direita ) {
@@ -24,6 +25,19 @@ public abstract class Expressao implements Expressible {
 
     protected double resultadoDaEsquerda() {
         return esquerda.avalia();
+    }
+
+    public Expressible getEsquerda() {
+        return esquerda;
+    }
+
+    public Expressible getDireita() {
+        return direita;
+    }
+
+    @Override
+    public void aceita( Visitor visitor ) {
+        visitor.visita( this );
     }
 
 }

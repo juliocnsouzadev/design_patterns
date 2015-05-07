@@ -1,5 +1,7 @@
 package br.com.juliocnsouza.designpatterns.interpreter;
 
+import br.com.juliocnsouza.designpatterns.interpreter.visitor.Visitor;
+
 /**
  * Numero.java -> Job:
  * <p>
@@ -17,6 +19,15 @@ public class Numero implements Expressible {
 
     @Override
     public double avalia() {
+        return numero;
+    }
+
+    @Override
+    public void aceita( Visitor visitor ) {
+        visitor.visita( this );
+    }
+
+    public double getNumero() {
         return numero;
     }
 

@@ -1,5 +1,7 @@
 package br.com.juliocnsouza.designpatterns.interpreter;
 
+import br.com.juliocnsouza.designpatterns.interpreter.visitor.Visitor;
+
 /**
  * Expressible.java -> Job:
  * <p>
@@ -10,5 +12,7 @@ package br.com.juliocnsouza.designpatterns.interpreter;
 public interface Expressible {
 
     double avalia();
+
+    void aceita( Visitor visitor );
 
 }

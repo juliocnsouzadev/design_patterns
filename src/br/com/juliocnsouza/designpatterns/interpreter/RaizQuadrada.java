@@ -1,5 +1,7 @@
 package br.com.juliocnsouza.designpatterns.interpreter;
 
+import br.com.juliocnsouza.designpatterns.interpreter.visitor.Visitor;
+
 /**
  * RaizQuadrada.java -> Job:
  * <p>
@@ -19,6 +21,15 @@ public class RaizQuadrada implements Expressible {
     @Override
     public double avalia() {
         return Math.sqrt( expressao.avalia() );
+    }
+
+    @Override
+    public void aceita( Visitor visitor ) {
+        visitor.visita( this );
+    }
+
+    public double getExpressao() {
+        return expressao.avalia();
     }
 
 }
